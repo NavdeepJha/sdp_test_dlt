@@ -7,11 +7,11 @@ resources:
       catalog: ${var.catalog}
       schema: ${var.schema}
       serverless: true
-      root_path: "../src/sdp_bundle_etl"
+      root_path: "../src/sdp_pipelines"
 
       libraries:
         - glob:
-            include: ../src/sdp_bundle_etl/transformations/**
+            include: ../src/sdp_pipelines/transformations/**
 
       environment:
         dependencies:

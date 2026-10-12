@@ -1,11 +1,11 @@
-CREATE VIEW sdp_catalog.gold.gold_HourlyView
+CREATE VIEW ${catalog}.dev.gold_HourlyView
 AS 
 SELECT
   Region_name,
   Count_date,
   hour,
   SUM(Cars_and_taxis) AS Cars_and_taxis_sum
-  FROM sdp_catalog.gold.gold_materializedView
+  FROM ${catalog}.dev.gold_materializedView
   GROUP BY Region_name,Count_date,hour ;
 
 
@@ -16,5 +16,5 @@ SELECT
   Count_date,
   hour,
   SUM(Cars_and_taxis) AS Cars_and_taxis_sum
-  FROM sdp_catalog.gold.gold_materializedView
+  FROM ${catalog}.dev.gold_materializedView
   GROUP BY Region_name,Count_date,hour;

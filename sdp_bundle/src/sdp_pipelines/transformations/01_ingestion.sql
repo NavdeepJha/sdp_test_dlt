@@ -1,5 +1,5 @@
 -- Bronze layer: ingest raw roads data from upstream streaming table
-CREATE OR REFRESH STREAMING TABLE ${catalog}.bronze.bronze_roads_sdp
+CREATE OR REFRESH STREAMING TABLE ${catalog}.dev.bronze_roads_sdp
 AS SELECT 
   `Road ID`                   AS Road_ID,
   `Road category id`          AS Road_category_id,
@@ -14,7 +14,7 @@ format => "csv",
 header => True,
 inferSchema => True);
 
-CREATE OR REFRESH STREAMING TABLE ${catalog}.bronze.bronze_traffic_sdp
+CREATE OR REFRESH STREAMING TABLE ${catalog}.dev.bronze_traffic_sdp
 AS SELECT 
   `Record ID`                  AS Record_ID,
   `Count point id`             AS Count_point_id,

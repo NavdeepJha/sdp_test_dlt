@@ -1,5 +1,5 @@
 -- Please edit the sample below
-CREATE MATERIALIZED VIEW sdp_catalog.gold.gold_materializedView AS
+CREATE MATERIALIZED VIEW ${catalog}.dev.gold_materializedView AS
 SELECT
   TR.Record_ID,
   TR.Count_point_id,
@@ -23,6 +23,6 @@ SELECT
   TR.Buses_and_coaches,
   TR.LGV_Type,
   RR.Road_ID
-FROM sdp_catalog.silver.traffic_cleaned_sdp AS TR
-JOIN sdp_catalog.silver.roads_cleaned_sdp AS RR
+FROM ${catalog}.dev.traffic_cleaned_sdp AS TR
+JOIN ${catalog}.dev.roads_cleaned_sdp AS RR
 ON TR.Road_Category_ID = RR.Road_category_id;
